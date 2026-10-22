@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0c10"><meta name="description" content="BEAUTYLINK — بازار هوشمند خدمات زیبایی برای بانوان و آقایان">
+<title>آرایش تو — BEAUTYLINK V12</title>
+<style>
+:root{--bg:#08090d;--card:#14161d;--soft:#1d2029;--text:#fbf7f4;--muted:#a9a6ad;--accent:#f4b7d3;--accent2:#bfa5ff;--cyan:#8de6df;--line:#292d38;--ok:#8fe0ac;--warn:#ffd27a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 10% 0%,#30213c 0,transparent 30%),radial-gradient(circle at 90% 15%,#183c46 0,transparent 28%),#05060a;color:var(--text);font-family:Tahoma,Arial,sans-serif}.app{max-width:440px;margin:auto;min-height:100vh;background:linear-gradient(180deg,#0b0c12f7,#10121a 55%,#0a0b10);position:relative;padding-bottom:92px;box-shadow:0 0 80px #000}
+header{padding:18px 17px 10px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#0b0c12e8;backdrop-filter:blur(18px);z-index:10;border-bottom:1px solid #ffffff08}.logo{font-size:18px;letter-spacing:1px}.logo b{font-family:Georgia,serif;font-size:29px;color:var(--accent)}.icon{width:38px;height:38px;border:1px solid var(--line);border-radius:13px;display:grid;place-items:center;color:var(--accent);background:#ffffff05}
+main{padding:10px 16px}.page{display:none}.page.active{display:block}h1{font-size:25px;margin:15px 0 7px}.sub{color:var(--muted);font-size:13px;line-height:1.9}.search{margin:16px 0;background:#151821;border:1px solid var(--line);border-radius:16px;padding:14px;color:#92919a;box-shadow:0 8px 30px #0004}
+.hero{border:1px solid #ffffff14;border-radius:25px;overflow:hidden;min-height:245px;padding:23px;background:linear-gradient(135deg,#342438 0%,#171b2b 45%,#102d31 100%);position:relative;box-shadow:0 18px 50px #0007}.hero:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,#f4b7d344,transparent 65%);left:-50px;top:-70px}.hero:after{content:"✦  ◌  ✧";position:absolute;left:18px;bottom:18px;color:#ffffff36;font-size:42px;letter-spacing:15px}.hero>*{position:relative;z-index:1}.hero h2{font-size:24px;line-height:1.55;max-width:290px;margin:0 0 8px}.hero .eyebrow{color:var(--cyan);font-size:12px;font-weight:bold}.btn{border:0;border-radius:14px;padding:12px 17px;background:linear-gradient(135deg,var(--accent),#ffd4e5);color:#27151e;font-weight:bold;cursor:pointer}.btn.alt{background:linear-gradient(135deg,var(--accent2),#dfd3ff)}.btn.ghost{background:transparent;border:1px solid #67636d;color:var(--text)}
+.section{display:flex;justify-content:space-between;align-items:center;margin:24px 0 12px}.section h3{margin:0;font-size:16px}.link{color:var(--accent);font-size:12px}.gender{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}.gender button{border:1px solid var(--line);background:var(--card);color:var(--muted);padding:12px;border-radius:14px}.gender button.on{background:linear-gradient(135deg,#f4b7d322,#bfa5ff22);border-color:#f4b7d366;color:var(--text)}
+.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:8px 0 4px}
+.category-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:7px 5px 9px;text-align:center;cursor:pointer;transition:.2s}
+.category-card.active{border-color:var(--accent);box-shadow:0 0 0 1px #f1c2ae33}
+.category-card b{display:block;font-size:11px;margin-top:6px}
+.category-card span{display:block;color:var(--muted);font-size:8px;line-height:1.4;margin-top:3px}
+.category-photo{height:62px;border-radius:12px;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.category-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,#0008)}
+.hair-photo{background-image:url("https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=500&q=80")}
+.color-photo{background-image:url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80")}
+.makeup-photo{background-image:url("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=500&q=80")}
+.beard-photo{background-image:url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=500&q=80")}
+.brow-photo{background-image:url("https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=500&q=80")}
+.nail-photo{background-image:url("https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=500&q=80")}
+.skin-photo{background-image:url("https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=500&q=80")}
+.other-photo{background-image:url("https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500&q=80")}
+
+.facial-photo{background-image:url("https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=500&q=80")}
+.marketplace{margin:18px 0;padding:16px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(135deg,#171717,#24201e);box-shadow:0 12px 30px #0003}
+.market-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:13px}
+.market-head h3{margin:0;font-size:17px}
+.market-head span{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+.market-head button{border:0;border-radius:12px;padding:9px 12px;background:var(--accent);color:#171717;font-weight:800;font-size:11px}
+.market-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.market-card{background:#ffffff08;border:1px solid #ffffff12;border-radius:15px;padding:12px}
+.market-icon{font-size:23px;margin-bottom:5px}
+.market-card b{display:block;font-size:12px}
+.market-card span{display:block;color:var(--muted);font-size:9px;line-height:1.6;margin-top:4px}
+.market-note{margin-top:12px;padding:10px 12px;border-radius:13px;background:#ffffff08;color:#cfcfcf;font-size:9px;line-height:1.8}
+
+
+.shop-tabs{display:flex;gap:7px;margin:14px 0 10px;overflow:auto}
+.shop-tab{border:1px solid var(--line);background:#ffffff08;color:#ddd;border-radius:11px;padding:8px 11px;font-size:10px;white-space:nowrap}
+.shop-tab.active{background:var(--accent);color:#171717;border-color:var(--accent);font-weight:800}
+.shop-tab span{background:#0002;padding:1px 5px;border-radius:7px}
+.product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.product-card{background:#ffffff07;border:1px solid #ffffff12;border-radius:16px;padding:10px}
+.product-img{height:72px;border-radius:12px;background:#ffffff0b;display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:8px}
+.product-card b{display:block;font-size:11px}
+.product-card span{display:block;color:var(--muted);font-size:8px;line-height:1.5;margin:3px 0 7px}
+.product-card strong{display:block;font-size:11px;margin-bottom:8px}
+.product-card button,.seller-form button,.checkout{width:100%;border:0;border-radius:10px;padding:9px;background:var(--accent);color:#171717;font-weight:800;font-size:10px}
+.hidden{display:none!important}
+.seller-box,.cart-box{background:#ffffff07;border:1px solid #ffffff12;border-radius:16px;padding:13px}
+.seller-box h4,.cart-box h4{margin:0 0 6px;font-size:13px}
+.seller-box p{color:var(--muted);font-size:9px;line-height:1.8;margin:0 0 10px}
+.seller-form{display:grid;gap:8px}
+.seller-form input,.seller-form select{width:100%;box-sizing:border-box;background:#111;border:1px solid #ffffff18;color:#eee;border-radius:10px;padding:10px;font-family:inherit;font-size:10px}
+.commission{margin-top:10px;padding:9px;border-radius:10px;background:#f1c2ae12;color:#ddd;font-size:9px;line-height:1.8}
+#cartItems{font-size:10px;color:#ddd;line-height:2;padding:8px 0}
+.cart-total{border-top:1px solid var(--line);padding:10px 0;font-size:11px}
+
+
+.finance-preview{margin-top:10px;border-top:1px solid #ffffff12;padding-top:10px;font-size:9px;line-height:2;color:#ddd}
+.finance-preview b{display:block;font-size:10px;margin-bottom:3px}
+.finance-admin{margin:18px 0;padding:15px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,#18191d,#24201e)}
+.finance-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.finance-head h3{margin:0;font-size:14px}.finance-head span{font-size:8px;color:var(--muted)}
+.finance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.finance-grid>div{background:#ffffff08;border-radius:12px;padding:9px}
+.finance-grid span{display:block;color:var(--muted);font-size:8px}.finance-grid b{display:block;font-size:10px;margin-top:5px}
+.finance-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid #ffffff0b;font-size:10px}
+.finance-row input{width:65px;background:#111;border:1px solid #ffffff18;color:#fff;border-radius:8px;padding:6px;text-align:center}
+.finance-warning{font-size:8px;color:var(--muted);line-height:1.8;margin:10px 0 0}
+
+.chips{display:flex;gap:8px;overflow:auto;padding-bottom:3px}.chip{white-space:nowrap;padding:9px 13px;border-radius:20px;background:var(--card);border:1px solid var(--line);font-size:12px}.chip.on{background:var(--accent);color:#251b17}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{background:linear-gradient(160deg,#181a23,#11131a);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 10px 28px #0005}.photo{height:132px;background:linear-gradient(135deg,#4a2f45,#1d3440 55%,#25202d);display:grid;place-items:center;font-size:40px}.cardbody{padding:11px}.name{font-size:14px;font-weight:bold}.meta{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.6}.rating{color:var(--accent);font-size:12px;margin-top:7px}.badge{display:inline-block;font-size:10px;padding:5px 8px;border-radius:9px;background:#ffffff0a;color:var(--cyan);margin-top:7px}
+.banner{margin-top:18px;border:1px solid #ffffff12;border-radius:19px;padding:17px;background:linear-gradient(120deg,#291d2c,#142b31);display:flex;justify-content:space-between;gap:12px;align-items:center}.banner b{font-size:15px;line-height:1.6}.banner small{display:block;color:var(--muted);margin-top:5px}.banner .ad{font-size:30px}
+.list{display:grid;gap:10px}.service,.booking,.panel{background:linear-gradient(160deg,#171922,#12141a);border:1px solid var(--line);border-radius:17px;padding:14px}.service,.booking{display:flex;justify-content:space-between;gap:10px;align-items:center}.price{font-weight:bold}.smallbtn{padding:9px 11px;border-radius:11px;border:1px solid #625b66;background:#ffffff05;color:var(--text);cursor:pointer}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:14px}.stat{background:var(--soft);border-radius:13px;padding:10px;text-align:center;font-size:11px}.stat b{display:block;font-size:15px;margin-bottom:3px}.profile{background:linear-gradient(145deg,#191923,#11141b);border:1px solid var(--line);border-radius:22px;padding:17px}.avatar{width:76px;height:76px;border-radius:50%;background:linear-gradient(135deg,#f4b7d3,#7965ad);display:grid;place-items:center;font-size:28px;margin:auto;color:#1d1620}.center{text-align:center}
+.ai{background:linear-gradient(160deg,#2b2030,#13252a);border:1px solid #51445d;border-radius:22px;padding:18px}.upload{height:220px;border:1px dashed #82758a;border-radius:18px;display:grid;place-items:center;text-align:center;color:var(--muted);margin:14px 0}.upload strong{display:block;color:var(--text);margin-bottom:8px}.video{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);padding:10px;border-radius:15px}.thumb{width:105px;height:72px;border-radius:11px;background:linear-gradient(135deg,#4b2f45,#1f3b40);display:grid;place-items:center;font-size:24px;flex:none}.tabs{display:flex;gap:7px;overflow:auto;margin:14px 0}.tab{padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--muted);white-space:nowrap}.tab.on{color:#1e1820;background:var(--accent)}
+.artistHero{padding:18px;border-radius:22px;background:linear-gradient(135deg,#281d31,#122c30);border:1px solid #ffffff12}.artistRow{display:flex;gap:12px;align-items:center}.artistPic{width:70px;height:70px;border-radius:20px;background:linear-gradient(135deg,#f2c0d7,#7165a4);display:grid;place-items:center;font-size:30px}.form{display:grid;gap:9px}.input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:#0f1117;color:var(--text);outline:none}.input:focus{border-color:#f4b7d388}.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.notice{padding:12px;border-radius:13px;background:#17251d;color:var(--ok);font-size:12px;line-height:1.7}.warn{background:#2b2315;color:var(--warn)}
+.adCard{background:linear-gradient(135deg,#261d30,#142b31);border:1px solid #ffffff15;border-radius:20px;padding:17px}.adOption{margin-top:10px;padding:13px;border:1px solid var(--line);border-radius:15px;background:#ffffff04;display:flex;justify-content:space-between;gap:10px;align-items:center}.adOption b{font-size:13px}.adOption small{display:block;color:var(--muted);margin-top:5px;line-height:1.6}.commission{font-size:11px;color:var(--muted);line-height:1.8;margin-top:12px}.trial{margin-top:18px;padding:16px;border-radius:19px;border:1px solid #f4b7d344;background:linear-gradient(135deg,#f4b7d315,#bfa5ff10)}.trial b{color:var(--accent)}
+.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(440px,100%);background:#0e1015f7;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding:9px 5px 12px;z-index:10;backdrop-filter:blur(18px)}.nav{border:0;background:none;color:#777;font-size:10px;cursor:pointer}.nav span{display:block;font-size:19px;margin-bottom:3px}.nav.active{color:var(--accent)}
+.modal{display:none;position:fixed;inset:0;background:#000b;z-index:20;align-items:flex-end}.modal.show{display:flex}.sheet{width:min(440px,100%);margin:auto;background:#15171d;border:1px solid var(--line);border-radius:25px 25px 0 0;padding:20px}.close{float:left;background:none;border:0;color:#aaa;font-size:22px}.times{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0}.time{padding:11px;border:1px solid var(--line);border-radius:11px;background:var(--card);color:var(--text)}.time.selected{background:var(--accent);color:#211914}.toast{position:fixed;left:50%;bottom:95px;transform:translateX(-50%) translateY(20px);background:#f5f1ed;color:#161219;padding:12px 16px;border-radius:13px;font-size:12px;opacity:0;pointer-events:none;transition:.3s;z-index:40;white-space:nowrap}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.social-tabs{display:flex;gap:7px;overflow:auto;margin:14px 0}.social-tab{border:1px solid var(--line);background:#ffffff08;color:#ddd;border-radius:12px;padding:9px 12px;font-size:10px;white-space:nowrap}.social-tab.on{background:var(--accent);color:#211914}
+.story-row{display:flex;gap:10px;overflow:auto;padding:5px 0 12px}.story{min-width:66px;text-align:center;font-size:9px;color:var(--muted)}.story-ring{width:58px;height:58px;border-radius:50%;margin:auto auto 5px;background:linear-gradient(135deg,#f4b7d3,#bfa5ff,#8de6df);padding:2px}.story-ring>div{height:100%;border-radius:50%;background:#15171d;display:grid;place-items:center;font-size:24px}
+.feed{display:grid;gap:13px}.post{background:linear-gradient(160deg,#171922,#101218);border:1px solid var(--line);border-radius:19px;overflow:hidden}.post-head{display:flex;align-items:center;gap:9px;padding:11px}.post-avatar{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#f4b7d3,#7165a4);display:grid;place-items:center}.post-head b{font-size:11px}.post-head small{display:block;color:var(--muted);font-size:8px;margin-top:3px}.follow{margin-right:auto;border:1px solid #716579;background:#ffffff05;color:var(--accent);border-radius:9px;padding:6px 9px;font-size:9px}.post-img{height:220px;background:linear-gradient(135deg,#38243c,#172d34);display:grid;place-items:center;font-size:70px}.post-actions{display:flex;gap:16px;padding:10px 12px 3px;font-size:11px}.post-caption{padding:4px 12px 12px;font-size:10px;line-height:1.8}.wait-card,.reminder-card,.feedback-card,.chat-card{background:linear-gradient(160deg,#171922,#11141a);border:1px solid var(--line);border-radius:17px;padding:14px;margin-top:10px}.pill{display:inline-block;padding:5px 8px;border-radius:9px;background:#ffffff09;color:var(--cyan);font-size:9px}.toggle-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #ffffff0b;font-size:10px}.switch{width:40px;height:22px;border-radius:20px;background:#363944;position:relative;border:0}.switch.on{background:var(--accent)}.switch:after{content:"";position:absolute;top:3px;right:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:.2s}.switch.on:after{right:21px}.feedback-card textarea{width:100%;min-height:100px;background:#0f1117;border:1px solid var(--line);color:var(--text);border-radius:12px;padding:10px;font-family:inherit;resize:vertical}.stars{display:flex;gap:4px;direction:ltr;margin:10px 0}.star{border:0;background:none;font-size:24px;color:#555;cursor:pointer}.star.on{color:var(--accent)}.chat-list{display:grid;gap:9px;max-height:320px;overflow:auto}.bubble{max-width:82%;padding:9px 11px;border-radius:14px;background:#ffffff08;font-size:10px;line-height:1.7}.bubble.me{margin-right:auto;background:#f4b7d322}.chat-input{display:flex;gap:7px;margin-top:10px}.chat-input input{flex:1}.social-cta{margin:12px 0;padding:14px;border-radius:17px;background:linear-gradient(135deg,#281d31,#132b30);border:1px solid #ffffff12}.privacy-note{font-size:8px;color:var(--muted);line-height:1.8;margin-top:7px}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+ integrity="sha256-p4NxAoJBhIINfQ3gF6E3V7e6Jx6J1jvYw2f1gQ9X9dA=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+
+<style>
+.location-card{margin-top:18px;background:linear-gradient(145deg,#171a22,#11141b);border:1px solid var(--line);border-radius:22px;padding:15px}
+.location-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.location-head h3{margin:0;font-size:16px}
+.address{font-size:12px;line-height:1.8;color:var(--muted);margin-bottom:12px}
+.map-wrap{height:240px;border-radius:17px;overflow:hidden;border:1px solid #ffffff14;position:relative}
+#stylistMap{height:100%;width:100%}
+.map-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.map-actions .btn{font-size:12px;padding:11px 8px}
+.location-note{font-size:10px;color:var(--muted);line-height:1.8;margin-top:9px}
+.leaflet-control-attribution{font-size:8px}
+</style>
+
+
+<style>
+#ownerMap{height:100%;width:100%}
+.saved-location{font-size:11px;color:var(--muted);line-height:1.8;margin-top:8px}
+</style>
+
+
+<style>
+.nearby-map{height:300px}
+#nearbyMap{height:100%;width:100%}
+.nearby-list{display:grid;gap:10px;margin-top:14px}
+.nearby-item{background:var(--card,#171a22);border:1px solid var(--line,#ffffff14);border-radius:18px;padding:14px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.nearby-item .name{font-weight:700}
+.nearby-item .meta{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.7}
+.distance{font-weight:700;white-space:nowrap}
+</style>
+
+
+<style>
+.filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.filter-grid select{width:100%;border:1px solid #ffffff18;background:#11141b;color:inherit;border-radius:12px;padding:11px 9px;font-family:inherit;font-size:12px;outline:none}
+@media(max-width:380px){.filter-grid{grid-template-columns:1fr}}
+</style>
+
+
+<style>
+.dashboard-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.dash-card{padding:16px;border:1px solid #ffffff14;border-radius:18px;background:#171a22;text-align:center}
+.dash-card b{display:block;font-size:21px}.dash-card span{font-size:11px;color:var(--muted)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-grid label{font-size:11px;color:var(--muted);display:block}
+.form-grid input,.form-grid select{width:100%;box-sizing:border-box;margin-top:5px;border:1px solid #ffffff18;background:#11141b;color:inherit;border-radius:12px;padding:11px;font-family:inherit}
+.booking-row{display:grid;grid-template-columns:55px 1fr auto;align-items:center;gap:8px;padding:12px 0;border-bottom:1px solid #ffffff0d;font-size:12px}
+.mini-btn{border:1px solid #ffffff18;background:#11141b;color:inherit;border-radius:9px;padding:7px 9px;font-family:inherit;font-size:10px}
+.service-manager-row{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;padding:11px 0;border-bottom:1px solid #ffffff0d;font-size:12px}
+.service-manager-row small{display:block;color:var(--muted);margin-top:3px}
+.remove-service{border:0;background:transparent;color:#ff8a8a;font-family:inherit}
+@media(max-width:380px){.form-grid{grid-template-columns:1fr}}
+</style>
+
+
+<style>
+.booking-card{padding:13px 0;border-bottom:1px solid #ffffff0d}
+.booking-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.booking-customer{font-weight:700}
+.booking-meta{font-size:11px;color:var(--muted);line-height:1.8;margin-top:5px}
+.booking-actions{display:flex;gap:7px;margin-top:9px}
+.booking-actions button{flex:1;border:1px solid #ffffff18;background:#11141b;color:inherit;border-radius:10px;padding:9px 6px;font-family:inherit;font-size:10px}
+.status-pending{color:#ffd36b}.status-confirmed{color:#9ee6b0}.status-rejected{color:#ff9a9a}.status-completed{color:#9fc8ff}
+.empty-bookings{padding:18px;text-align:center;color:var(--muted);font-size:12px}
+</style>
+
+</head>
+<body><div class="app">
+<header><div class="logo"><b>ℬ</b> BEAUTYLINK</div><button class="icon" onclick="show('profile')">♡</button></header>
+<main>
+<section id="home" class="page active"><h1>سلام حسین 👋</h1><div class="sub">زیبایی برای همه؛ بانوان و آقایان، از انتخاب تا رزرو و آموزش.</div>
+<div class="gender"><button class="on" onclick="gender(this)">بانوان ✨</button><button onclick="gender(this)">آقایان 🧔</button></div>
+<div class="search">⌕ جستجوی آرایشگر، سالن یا خدمات...</div>
+<div class="hero"><div class="eyebrow">BEAUTYLINK AI</div><h2>استایل مناسب خودت رو پیدا کن</h2><p class="sub">عکس یا سلیقه‌ات را وارد کن تا مدل مو، ریش، میکاپ و استایل پیشنهادی بگیری.</p><button class="btn" onclick="show('ai')">تجربه کن ✨</button></div>
+<div class="banner"><div><b>کسب‌وکار زیبایی خودت رو بیشتر دیده شو</b><small>جایگاه ویژه، بنر و تبلیغ در نتایج جستجو</small></div><div class="ad">📣</div></div>
+
+<div class="marketplace">
+  <div class="market-head">
+    <div><h3>🛍️ BEAUTYLINK SHOP</h3><span>فروش مواد مصرفی، ابزار و تجهیزات آرایشگری</span></div>
+    <button onclick="sellerSignup()">عضویت فروشنده</button>
+  </div>
+  <div class="market-grid">
+    <div class="market-card"><div class="market-icon">💄</div><b>مواد مصرفی</b><span>محصولات رنگ، مراقبت و مصرف روزانه</span></div>
+    <div class="market-card"><div class="market-icon">✂️</div><b>ابزار آرایشگری</b><span>قیچی، ماشین، سشوار و ابزار تخصصی</span></div>
+    <div class="market-card"><div class="market-icon">🧴</div><b>محصولات حرفه‌ای</b><span>خرید برای سالن‌ها و استفاده شخصی</span></div>
+    <div class="market-card"><div class="market-icon">🔄</div><b>خرید و فروش</b><span>عرضه مستقیم فروشندگان و سالن‌ها</span></div>
+  </div>
+  <div class="market-note">فروشنده‌ها می‌توانند فروشگاه اختصاصی بسازند، کالا ثبت کنند، قیمت و موجودی را مدیریت کنند و سفارش‌ها را پیگیری کنند.</div>
+<div class="shop-tabs">
+  <button class="shop-tab active" onclick="showShopTab('products',this)">محصولات</button>
+  <button class="shop-tab" onclick="showShopTab('seller',this)">پنل فروشنده</button>
+  <button class="shop-tab" onclick="showShopTab('cart',this)">سبد خرید <span id="cartCount">0</span></button>
+</div>
+
+<div id="shop-products" class="shop-panel">
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-img">🧴</div><b>ماسک فیشیال حرفه‌ای</b><span>مناسب سالن و مصرف شخصی</span>
+      <strong>۴۸۰٬۰۰۰ تومان</strong><button onclick="addToCart('ماسک فیشیال حرفه‌ای',480000)">افزودن به سبد</button>
+    </div>
+    <div class="product-card">
+      <div class="product-img">✂️</div><b>قیچی حرفه‌ای آرایشگری</b><span>ابزار تخصصی سالن</span>
+      <strong>۱٬۲۵۰٬۰۰۰ تومان</strong><button onclick="addToCart('قیچی حرفه‌ای آرایشگری',1250000)">افزودن به سبد</button>
+    </div>
+    <div class="product-card">
+      <div class="product-img">💨</div><b>سشوار حرفه‌ای</b><span>مناسب استفاده مداوم</span>
+      <strong>۳٬۹۰۰٬۰۰۰ تومان</strong><button onclick="addToCart('سشوار حرفه‌ای',3900000)">افزودن به سبد</button>
+    </div>
+    <div class="product-card">
+      <div class="product-img">🎨</div><b>پک رنگ و اکسیدان</b><span>ویژه رنگ‌کارها</span>
+      <strong>۹۸۰٬۰۰۰ تومان</strong><button onclick="addToCart('پک رنگ و اکسیدان',980000)">افزودن به سبد</button>
+    </div>
+  </div>
+</div>
+
+<div id="shop-seller" class="shop-panel hidden">
+  <div class="seller-box">
+    <h4>🏪 ثبت‌نام فروشنده BEAUTYLINK</h4>
+    <p>فروشنده می‌تواند فروشگاه اختصاصی خود را بسازد و محصولات، قیمت، موجودی و سفارش‌ها را مدیریت کند.</p>
+    <div class="seller-form">
+      <input id="sellerName" placeholder="نام فروشگاه / سالن">
+      <input id="sellerPhone" placeholder="شماره تماس">
+      <select id="sellerType"><option>مواد مصرفی</option><option>ابزار آرایشگری</option><option>تجهیزات سالن</option><option>محصولات مراقبت پوست و مو</option></select>
+      <button onclick="registerSeller()">ثبت درخواست عضویت فروشنده</button>
+    </div>
+    <div class="commission">💰 سهم BEAUTYLINK از فروش: <b id="sellerRateLabel">۱۰٪ (قابل تنظیم)</b><br>تسویه فروشنده پس از کسر سهم پلتفرم و هزینه‌های تعریف‌شده انجام می‌شود.</div>
+<div class="finance-preview">
+  <b>نمونه محاسبه تسویه</b>
+  <div>فروش: <span id="previewSale">۱٬۰۰۰٬۰۰۰</span> تومان</div>
+  <div>سهم BEAUTYLINK: <span id="previewFee">۱۰۰٬۰۰۰</span> تومان</div>
+  <div>سهم فروشنده: <span id="previewSeller">۹۰۰٬۰۰۰</span> تومان</div>
+</div>
+  </div>
+</div>
+
+<div id="shop-cart" class="shop-panel hidden">
+  <div class="cart-box">
+    <h4>🛒 سبد خرید</h4>
+    <div id="cartItems">سبد خرید شما خالی است.</div>
+    <div class="cart-total">جمع: <b id="cartTotal">۰ تومان</b></div>
+    <button class="checkout" onclick="checkout()">ادامه و پرداخت</button>
+  </div>
+</div>
+<div class="finance-admin">
+  <div class="finance-head"><h3>💳 مدیریت مالی BEAUTYLINK</h3><span>نمایش آزمایشی پنل مدیر</span></div>
+  <div class="finance-grid">
+    <div><span>فروش امروز</span><b>۱۲٬۸۵۰٬۰۰۰ تومان</b></div>
+    <div><span>کارمزد پلتفرم</span><b>۱٬۲۸۵٬۰۰۰ تومان</b></div>
+    <div><span>قابل تسویه فروشندگان</span><b>۱۱٬۵۶۵٬۰۰۰ تومان</b></div>
+  </div>
+  <div class="finance-row"><span>درصد فروشگاه</span><input id="commissionInput" type="number" min="0" max="100" value="10" oninput="updateCommission(this.value)">%</div>
+  <div class="finance-row"><span>درصد فروش ویدیو آموزشی</span><input type="number" min="0" max="100" value="15">%</div>
+  <div class="finance-row"><span>درصد تبلیغات</span><input type="number" min="0" max="100" value="10">%</div>
+  <p class="finance-warning">این اعداد صرفاً نمونه‌اند. اتصال واقعی به درگاه، احراز هویت فروشنده، حساب تسویه و محاسبه مالیات/کارمزد قانونی باید در بک‌اند و مطابق مقررات درگاه و کشور محل فعالیت پیاده‌سازی شود.</p>
+</div>
+</div>
+<div class="section"><h3>دسته‌بندی خدمات</h3><span class="link">مشاهده همه</span></div>
+<div class="category-grid">
+  <div class="category-card active" onclick="selectCategory(this)"><div class="category-photo hair-photo"></div><b>مو</b><span>کوتاهی و استایل</span></div>
+  <div class="category-card" onclick="selectCategory(this)"><div class="category-photo color-photo"></div><b>رنگ و لایت</b><span>رنگ و هایلایت</span></div>
+  <div class="category-card" onclick="selectCategory(this)"><div class="category-photo makeup-photo"></div><b>میکاپ</b><span>آرایش و میکاپ</span></div>
+  <div class="category-card" onclick="selectCategory(this)"><div class="category-photo beard-photo"></div><b>ریش</b><span>اصلاح و فرم‌دهی</span></div>
+  <div class="category-card" onclick="selectCategory(this)"><div class="category-photo brow-photo"></div><b>ابرو</b><span>اصلاح و طراحی</span></div>
+  <div class="category-card" onclick="selectCategory(this)"><div class="category-photo nail-photo"></div><b>ناخن</b><span>کاشت و طراحی</span></div>
+  <div class="category-card" onclick="selectCategory(this)"><div class="category-photo skin-photo"></div><b>پوست</b><span>پاکسازی و مراقبت</span></div>
+  <div class="category-card" onclick="selectCategory(this)"><div class="category-photo facial-photo"></div><b>پاکسازی و فیشیال</b><span>فیشیال و مراقبت تخصصی</span></div>
+  <div class="category-card" onclick="selectCategory(this)"><div class="category-photo other-photo"></div><b>سایر خدمات</b><span>خدمات بیشتر</span></div>
+</div>
+<div class="section"><h3>آرایشگران و متخصصان برتر</h3><span class="link">مشاهده همه</span></div><div class="grid"><div class="card" onclick="show('stylist')"><div class="photo">👩🏻‍🎨</div><div class="cardbody"><div class="name">سارا محمدی</div><div class="meta">متخصص رنگ و لایت</div><div class="rating">★ 4.9</div><span class="badge">اولین نوبت: امروز ۱۴:۰۰</span></div></div><div class="card" onclick="show('stylist')"><div class="photo">🧔🏻‍♂️</div><div class="cardbody"><div class="name">علی کریمی</div><div class="meta">متخصص اصلاح و استایل مردانه</div><div class="rating">★ 4.8</div><span class="badge">اولین نوبت: امروز ۱۶:۳۰</span></div></div></div>
+
+<div class="section"><h3>امکانات جدید</h3><span class="link">نسخه V6</span></div>
+<div class="grid">
+  <div class="card" onclick="show('social')"><div class="photo">📸</div><div class="cardbody"><div class="name">فید آرایشگرها</div><div class="meta">پست، استوری و دنبال‌کردن</div></div></div>
+  <div class="card" onclick="show('waitlist')"><div class="photo">⏳</div><div class="cardbody"><div class="name">صف انتظار</div><div class="meta">دریافت نوبت‌های لغوشده</div></div></div>
+  <div class="card" onclick="show('feedback')"><div class="photo">⭐</div><div class="cardbody"><div class="name">نظرسنجی و انتقاد خصوصی</div><div class="meta">بازخورد بعد از انجام خدمت</div></div></div>
+  <div class="card" onclick="show('reminders')"><div class="photo">🔔</div><div class="cardbody"><div class="name">یادآوری SMS</div><div class="meta">برای مشتری و آرایشگر</div></div></div>
+</div>
+<div class="trial"><b>۲۰ روز اول رایگان 🎁</b><div class="sub">نسخه آزمایشی برای آشنایی با امکانات. بعد از پایان دوره، اشتراک متناسب با نوع کاربر فعال می‌شود.</div></div></section>
+
+<section id="stylist" class="page">
+<h1>پروفایل متخصص</h1>
+<div class="artistHero">
+  <div class="artistRow"><div class="artistPic">👩🏻‍🎨</div><div>
+    <h2 style="margin:0">سارا محمدی</h2>
+    <div class="sub">متخصص رنگ و لایت · تهران</div>
+    <div class="rating">★ 4.9 · ۲۶۵ نظر</div>
+  </div></div>
+  <div class="stats">
+    <div class="stat"><b>۳ سال</b>سابقه</div>
+    <div class="stat"><b>۵۰۰+</b>مشتری</div>
+    <div class="stat"><b>۱۲۴</b>نمونه‌کار</div>
+  </div>
+</div>
+
+
+<div class="location-card" id="stylistLocationManager">
+  <div class="location-head">
+    <h3>📍 ثبت موقعیت سالن</h3>
+    <span class="badge">ویژه آرایشگر</span>
+  </div>
+  <div class="address">آرایشگر می‌تواند موقعیت دقیق سالن را از روی نقشه انتخاب کند یا از موقعیت فعلی دستگاه استفاده کند.</div>
+  <div class="map-wrap"><div id="ownerMap"></div></div>
+  <div class="map-actions">
+    <button class="btn" onclick="useCurrentSalonLocation()">📍 استفاده از موقعیت فعلی</button>
+    <button class="btn alt" onclick="saveSalonLocation()">💾 ذخیره موقعیت</button>
+  </div>
+  <div class="location-note" id="savedLocationText">هنوز موقعیت اختصاصی سالن ذخیره نشده است.</div>
+</div>
+
+<div class="location-card">
+  <div class="location-head">
+    <h3>📍 موقعیت سالن</h3>
+    <span class="badge">مکان تأییدشده</span>
+  </div>
+  <div class="address">تهران، سعادت‌آباد، بلوار سرو غربی، خیابان بهارستان<br>سالن زیبایی سارا · طبقه ۲</div>
+  <div class="map-wrap"><div id="stylistMap"></div></div>
+  <div class="map-actions">
+    <button class="btn" onclick="routeToStylist()">🧭 مسیریابی</button>
+    <button class="btn alt" onclick="locateMe()">📍 موقعیت من</button>
+  </div>
+  <div class="location-note">موقعیت سالن روی نقشه توسط آرایشگر ثبت شده است. با «موقعیت من» فاصله تقریبی تا سالن را می‌توان محاسبه کرد.</div>
+</div>
+
+<div class="section"><h3>خدمات و قیمت‌ها</h3><span class="link">قابل مدیریت توسط آرایشگر</span></div>
+<div class="list">
+  <div class="service"><div><b>رنگ و لایت</b><div class="meta">۱۵۰ دقیقه</div></div><div class="price">۱,۸۰۰,۰۰۰ تومان</div></div>
+  <div class="service"><div><b>میکاپ</b><div class="meta">۹۰ دقیقه</div></div><div class="price">۹۵۰,۰۰۰ تومان</div></div>
+  <div class="service"><div><b>براشینگ</b><div class="meta">۶۰ دقیقه</div></div><div class="price">۴۵۰,۰۰۰ تومان</div></div>
+</div>
+<button class="btn" style="width:100%;margin-top:14px" onclick="openBook('سارا محمدی')">رزرو نوبت</button>
+
+<div class="section"><h3>نمونه‌کارها</h3><span class="link">۱۲۴ نمونه</span></div>
+<div class="grid">
+  <div class="card"><div class="photo">💇🏻‍♀️</div><div class="cardbody"><div class="name">رنگ گرم طبیعی</div><div class="meta">رنگ و لایت</div></div></div>
+  <div class="card"><div class="photo">✨</div><div class="cardbody"><div class="name">استایل مجلسی</div><div class="meta">میکاپ و مو</div></div></div>
+</div>
+
+<div class="section"><h3>🎁 پیشنهاد ویژه</h3></div>
+<div class="notice">برای رزرو رنگ و لایت در روزهای دوشنبه و سه‌شنبه، براشینگ رایگان دریافت کنید.</div>
+</section>
+
+<section id="bookings" class="page"><h1>نوبت‌های من</h1><div class="tabs"><span class="tab on">همه</span><span class="tab">تأیید شده</span><span class="tab">در انتظار</span><span class="tab">لغو شده</span></div><div class="list"><div class="booking"><div><b>رنگ و لایت</b><div class="meta">سارا محمدی · ۲۸ اردیبهشت · ۱۴:۰۰</div></div><span class="badge">تأیید شده</span></div><div class="booking"><div><b>اصلاح و استایل</b><div class="meta">علی کریمی · ۳۰ اردیبهشت · ۱۶:۳۰</div></div><span class="badge">در انتظار</span></div></div><div class="notice" style="margin-top:14px">آرایشگر می‌تواند زمان‌های آزاد را دستی تنظیم و نوبت‌های خارج از سیستم را نیز ثبت کند.</div></section>
+
+
+<section id="social" class="page">
+  <h1>آرایش تو ✦ اجتماعی</h1>
+  <div class="sub">نمونه‌کارها، استوری‌ها، دنبال‌کردن آرایشگرها و دورهمی کاربران.</div>
+  <div class="social-cta"><b>صفحه آرایشگرها مثل یک شبکه اجتماعی</b><div class="sub">آرایشگرها می‌توانند پست و استوری بگذارند و مشتری‌ها آن‌ها را دنبال کنند.</div></div>
+  <div class="story-row">
+    <div class="story"><div class="story-ring"><div>➕</div></div>استوری من</div>
+    <div class="story"><div class="story-ring"><div>👩🏻‍🎨</div></div>سارا</div>
+    <div class="story"><div class="story-ring"><div>🧔🏻</div></div>علی</div>
+    <div class="story"><div class="story-ring"><div>💅</div></div>مریم</div>
+    <div class="story"><div class="story-ring"><div>💄</div></div>نگار</div>
+  </div>
+  <div class="social-tabs"><button class="social-tab on" onclick="socialFilter(this)">برای تو</button><button class="social-tab" onclick="socialFilter(this)">دنبال‌شده‌ها</button><button class="social-tab" onclick="socialFilter(this)">محبوب‌ترین</button></div>
+  <div class="feed">
+    <div class="post">
+      <div class="post-head"><div class="post-avatar">👩🏻‍🎨</div><div><b>سارا محمدی</b><small>متخصص رنگ و لایت · ۱۰ دقیقه پیش</small></div><button class="follow" onclick="toggleFollow(this)">+ دنبال کردن</button></div>
+      <div class="post-img">💇🏻‍♀️</div>
+      <div class="post-actions"><span>♡ ۲۴۶</span><span>💬 ۳۱</span><span>↗ اشتراک</span></div>
+      <div class="post-caption"><b>سارا:</b> ترکیب رنگ گرم و طبیعی برای استایل پاییزی ✨ <span class="badge">رزرو این خدمت</span></div>
+    </div>
+    <div class="post">
+      <div class="post-head"><div class="post-avatar">🧔🏻</div><div><b>علی کریمی</b><small>متخصص استایل مردانه · ۱ ساعت پیش</small></div><button class="follow" onclick="toggleFollow(this)">+ دنبال کردن</button></div>
+      <div class="post-img">🧔🏻‍♂️</div>
+      <div class="post-actions"><span>♡ ۱۸۲</span><span>💬 ۱۸</span><span>↗ اشتراک</span></div>
+      <div class="post-caption"><b>علی:</b> فید تمیز و فرم‌دهی ریش برای چهره‌های کشیده.</div>
+    </div>
+  </div>
+  <div class="section"><h3>💬 دورهمی و گفتگو</h3></div>
+  <div class="chat-card">
+    <div class="sub">فضای گفت‌وگوی کاربران درباره زیبایی، مو، ریش، پوست و تجربه خدمات.</div>
+    <div class="chat-list" id="chatList">
+      <div class="bubble">بهترین مدل فید برای صورت گرد چیه؟</div>
+      <div class="bubble me">من فید متوسط رو امتحان کردم، خیلی خوب شد 👌</div>
+      <div class="bubble">برای مراقبت بعد از فیشیال چه پیشنهادی دارید؟</div>
+    </div>
+    <div class="chat-input"><input class="input" id="chatInput" placeholder="پیامت رو بنویس..."><button class="smallbtn" onclick="sendChat()">ارسال</button></div>
+  </div>
+</section>
+
+<section id="reminders" class="page">
+  <h1>یادآوری نوبت 🔔</h1>
+  <div class="sub">یادآوری برای مشتری و آرایشگر؛ پیامک واقعی پس از اتصال سرویس SMS ارسال می‌شود.</div>
+  <div class="reminder-card">
+    <b>نوبت فردا · سارا محمدی</b>
+    <div class="meta">رنگ و لایت · ساعت ۱۴:۰۰</div>
+    <div class="toggle-row"><span>SMS تأیید رزرو برای مشتری</span><button class="switch on" onclick="toggleSwitch(this)"></button></div>
+    <div class="toggle-row"><span>SMS یادآوری ۲۴ ساعت قبل برای مشتری</span><button class="switch on" onclick="toggleSwitch(this)"></button></div>
+    <div class="toggle-row"><span>SMS یادآوری ۲ ساعت قبل برای مشتری</span><button class="switch on" onclick="toggleSwitch(this)"></button></div>
+    <div class="toggle-row"><span>SMS یادآوری برای آرایشگر</span><button class="switch on" onclick="toggleSwitch(this)"></button></div>
+    <div class="privacy-note">در نسخه عملیاتی، ارسال پیامک به پنل SMS و الگوی تأییدشده پیام متصل می‌شود.</div>
+  </div>
+</section>
+
+<section id="waitlist" class="page">
+  <h1>صف انتظار ⏳</h1>
+  <div class="sub">اگر نوبتی لغو شود، فرصت رزرو آن به مشتری‌های منتظر پیشنهاد می‌شود.</div>
+  <div class="wait-card"><b>نوبت آزادشده</b><div class="meta">سارا محمدی · امروز ۱۸:۰۰ · رنگ و لایت</div><span class="pill">فرصت رزرو: ۱۰ دقیقه</span><button class="btn" style="width:100%;margin-top:12px" onclick="acceptWait()">قبول نوبت</button></div>
+  <div class="wait-card"><b>اولویت صف</b><div class="meta">شما نفر ۲ از ۷ هستید. پیشنهادها بر اساس زمان ورود به صف و تنظیمات کاربر ارسال می‌شوند.</div></div>
+</section>
+
+<section id="feedback" class="page">
+  <h1>بازخورد بعد از خدمت ⭐</h1>
+  <div class="sub">این بخش فقط پس از پایان یک نوبت واقعی فعال می‌شود.</div>
+  <div class="feedback-card">
+    <b>رنگ و لایت · سارا محمدی</b><div class="meta">نوبت انجام‌شده امروز · ۱۴:۰۰</div>
+    <div class="stars" id="stars"><button class="star" onclick="rateStar(1)">★</button><button class="star" onclick="rateStar(2)">★</button><button class="star" onclick="rateStar(3)">★</button><button class="star" onclick="rateStar(4)">★</button><button class="star" onclick="rateStar(5)">★</button></div>
+    <textarea id="publicFeedback" placeholder="نظر شما درباره کیفیت کار..."></textarea>
+    <button class="btn" style="width:100%;margin-top:9px" onclick="submitPublicFeedback()">ثبت نظر عمومی</button>
+  </div>
+  <div class="feedback-card">
+    <b>🔒 نظر خصوصی و انتقاد</b>
+    <div class="meta">این پیام در پروفایل عمومی نمایش داده نمی‌شود و برای آرایشگر خصوصی است.</div>
+    <textarea id="privateFeedback" placeholder="هر انتقاد یا پیشنهادی داری راحت و خصوصی بنویس..."></textarea>
+    <label style="display:block;font-size:10px;margin:9px 0"><input type="checkbox" id="anonymousFeedback" checked> نام من برای آرایشگر نمایش داده نشود</label>
+    <button class="btn alt" style="width:100%" onclick="submitPrivateFeedback()">ارسال بازخورد خصوصی 🔒</button>
+    <div class="privacy-note">سیستم می‌تواند برای جلوگیری از پیام جعلی، بازخورد را به نوبت انجام‌شده متصل نگه دارد؛ هویت برای آرایشگر مخفی می‌ماند.</div>
+  </div>
+</section>
+
+<section id="education" class="page"><h1>آموزش‌ها 🎥</h1><div class="sub">آموزش‌های تخصصی برای آرایشگران و علاقه‌مندان؛ رایگان و پولی.</div><div class="tabs"><span class="tab on">همه</span><span class="tab">مو</span><span class="tab">میکاپ</span><span class="tab">مردانه</span></div><div class="list"><div class="video"><div class="thumb">▶</div><div><b>آموزش کامل رنگ مو</b><div class="meta">۱۲:۳۴ · ۲۴.۵K بازدید</div><span class="badge">رایگان</span></div></div><div class="video"><div class="thumb">▶</div><div><b>کوتاهی و فید حرفه‌ای مردانه</b><div class="meta">۱۸:۲۱ · ۱۸.۷K بازدید</div><span class="badge">۱۲۰,۰۰۰ تومان</span></div></div><div class="video"><div class="thumb">▶</div><div><b>میکاپ روزانه</b><div class="meta">۱۵:۴۶ · ۳۲.۱K بازدید</div><span class="badge">۸۰,۰۰۰ تومان</span></div></div></div></section>
+
+<section id="ai" class="page"><h1>مشاور هوشمند ✦</h1><div class="ai"><h2 style="margin-top:0">استایل مخصوص تو</h2><div class="sub">برای خانم‌ها و آقایان؛ مدل مو، ریش، میکاپ، رنگ و استایل را بررسی کن.</div><div class="upload"><div><strong>＋ عکس خودت را اضافه کن</strong><span>پیشنهادها بر اساس عکس و انتخاب‌های تو نمایش داده می‌شوند.</span></div></div><button class="btn" style="width:100%" onclick="toast('در نسخه کامل، تحلیل تصویر فعال می‌شود ✨')">تحلیل عکس</button></div></section>
+
+<section id="profile" class="page"><h1>پروفایل من</h1><div class="profile center"><div class="avatar">H</div><h2>حسین</h2><div class="sub">عضو BEAUTYLINK · کاربر عادی</div><div class="stats"><div class="stat"><b>۲۰</b>روز تست</div><div class="stat"><b>۴.۸</b>امتیاز</div><div class="stat"><b>۱۲</b>نوبت</div></div></div><div class="section"><h3>حساب و اشتراک</h3></div><div class="list"><div class="service"><div><b>اشتراک مخاطب</b><div class="meta">بعد از ۲۰ روز، پلن اقتصادی با هزینه پایین</div></div><button class="smallbtn" onclick="toast('پلن‌ها در نسخه نهایی قابل انتخاب هستند')">مشاهده</button></div><div class="service"><div><b>تبدیل به حساب آرایشگر</b><div class="meta">مدیریت قیمت، نوبت، نمونه‌کار، تبلیغات و فروش آموزش</div></div><button class="smallbtn" onclick="show('artist')">ورود</button></div></div></section>
+
+<section id="artist" class="page"><h1>پنل آرایشگر 💼</h1><div class="artistHero"><div class="artistRow"><div class="artistPic">🧔🏻</div><div><h2 style="margin:0">حساب حرفه‌ای</h2><div class="sub">مدیریت کسب‌وکار زیبایی</div></div></div></div><div class="section"><h3>مدیریت سریع</h3></div><div class="list"><div class="service"><div><b>💰 خدمات و قیمت‌ها</b><div class="meta">قیمت، مدت زمان و فعال/غیرفعال کردن خدمت</div></div><button class="smallbtn" onclick="show('pricing')">مدیریت</button></div><div class="service"><div><b>📅 نوبت‌ها</b><div class="meta">تقویم، ساعات کاری و ثبت دستی نوبت</div></div><button class="smallbtn" onclick="show('calendar')">مدیریت</button></div><div class="service"><div><b>📣 تبلیغات و کمپین‌ها</b><div class="meta">بنر، جایگاه ویژه و تبلیغ در نتایج</div></div><button class="smallbtn" onclick="show('ads')">ساخت تبلیغ</button></div><div class="service"><div><b>🎥 فروش ویدیو آموزشی</b><div class="meta">آپلود آموزش و تعیین قیمت فروش</div></div><button class="smallbtn" onclick="toast('صفحه فروش ویدیو در نسخه نهایی متصل می‌شود')">مدیریت</button></div></div><div class="notice" style="margin-top:14px">کارمزد پلتفرم برای فروش آموزش و خدمات تبلیغاتی قابل تنظیم است؛ نرخ نمونه این نسخه ۱۰٪ است.</div></section>
+
+<section id="pricing" class="page"><h1>مدیریت خدمات و قیمت‌ها</h1><div class="form"><input class="input" placeholder="نام خدمت" value="رنگ و لایت"><div class="row2"><input class="input" placeholder="قیمت (تومان)" value="1800000"><input class="input" placeholder="مدت (دقیقه)" value="150"></div><button class="btn" onclick="toast('خدمت و قیمت ذخیره شد ✓')">ذخیره خدمت</button></div><div class="section"><h3>خدمات ثبت‌شده</h3></div><div class="list"><div class="service"><div><b>میکاپ عروس</b><div class="meta">۱۲۰ دقیقه</div></div><div class="price">۱,۵۰۰,۰۰۰ تومان</div></div><div class="service"><div><b>فید مردانه</b><div class="meta">۶۰ دقیقه</div></div><div class="price">۵۵۰,۰۰۰ تومان</div></div></div></section>
+
+<section id="calendar" class="page"><h1>مدیریت نوبت‌ها</h1><div class="panel"><b>ساعت کاری</b><div class="row2" style="margin-top:10px"><input class="input" value="09:00"><input class="input" value="21:00"></div><div class="meta">آرایشگر می‌تواند هر ساعت را آزاد، مشغول یا بسته تعیین کند.</div></div><div class="section"><h3>تقویم امروز</h3><button class="smallbtn" onclick="toast('نوبت دستی ثبت شد ✓')">＋ نوبت دستی</button></div><div class="list"><div class="booking"><div><b>۱۰:۰۰ · کوتاهی</b><div class="meta">مشتری: رزرو حضوری</div></div><span class="badge">ثبت دستی</span></div><div class="booking"><div><b>۱۴:۰۰ · رنگ و لایت</b><div class="meta">مشتری آنلاین</div></div><span class="badge">تأیید شده</span></div><div class="booking"><div><b>۱۷:۳۰ · فید مردانه</b><div class="meta">زمان آزاد</div></div><button class="smallbtn" onclick="toast('زمان بسته شد')">بستن زمان</button></div></div></section>
+
+<section id="ads" class="page"><h1>تبلیغات 📣</h1><div class="adCard"><h2 style="margin-top:0">کسب‌وکارت رو بیشتر دیده شو</h2><div class="sub">تبلیغ برای بانوان و آقایان با هدف‌گذاری نوع خدمت و منطقه.</div><div class="adOption"><div><b>بنر صفحه اصلی</b><small>بیشترین دیده‌شدن در صفحه اول</small></div><button class="btn" onclick="toast('کمپین انتخاب شد')">انتخاب</button></div><div class="adOption"><div><b>جایگاه ویژه جستجو</b><small>نمایش بالاتر از نتایج عادی</small></div><button class="btn" onclick="toast('کمپین انتخاب شد')">انتخاب</button></div><div class="adOption"><div><b>تبلیغ استوری</b><small>دسترسی سریع به مخاطبان</small></div><button class="btn" onclick="toast('کمپین انتخاب شد')">انتخاب</button></div><div class="commission">هزینه تبلیغ و درصد کارمزد پلتفرم در پنل مدیریت قابل تنظیم است. نرخ نمونه این نسخه: ۱۰٪ از فروش/تبلیغات.</div></div></section>
+</main>
+<nav class="bottom"><button class="nav active" onclick="show('home',this)"><span>⌂</span>خانه</button><button class="nav" onclick="show('education',this)"><span>▶</span>آموزش</button><button class="nav" onclick="show('bookings',this)"><span>▣</span>نوبت‌ها</button><button class="nav" onclick="show('ai',this)"><span>✦</span>AI</button><button class="nav" onclick="show('profile',this)"><span>♙</span>پروفایل</button></nav>
+<div id="modal" class="modal" onclick="if(event.target.id==='modal')closeBook()"><div class="sheet"><button class="close" onclick="closeBook()">×</button><h2 id="bookTitle">رزرو نوبت</h2><div class="sub">یک زمان خالی انتخاب کن.</div><div class="times"><button class="time" onclick="pick(this)">۱۰:۰۰</button><button class="time" onclick="pick(this)">۱۲:۳۰</button><button class="time" onclick="pick(this)">۱۴:۰۰</button><button class="time" onclick="pick(this)">۱۶:۳۰</button><button class="time" onclick="pick(this)">۱۸:۰۰</button><button class="time" onclick="pick(this)">۲۰:۰۰</button></div><button class="btn" style="width:100%" onclick="confirmBook()">تأیید نوبت</button></div></div><div id="toast" class="toast"></div>
+<script>
+function selectCategory(el){
+  document.querySelectorAll('.category-card').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');
+}
+</script>
+
+<script>
+let stylistMap, stylistMarker;
+const stylistLatLng = [35.7868, 51.4447];
+
+function initStylistMap(){
+  const el = document.getElementById('stylistMap');
+  if(!el || typeof L === 'undefined') return;
+  if(stylistMap){
+    stylistMap.invalidateSize();
+    return;
+  }
+  stylistMap = L.map('stylistMap', {scrollWheelZoom:false}).setView(stylistLatLng, 15);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom:19,
+    attribution:'© OpenStreetMap contributors'
+  }).addTo(stylistMap);
+  stylistMarker = L.marker(stylistLatLng).addTo(stylistMap)
+    .bindPopup('<b>سالن زیبایی سارا</b><br>سعادت‌آباد، تهران')
+    .openPopup();
+}
+
+function routeToStylist(){
+  const [lat,lng] = stylistLatLng;
+  window.open('https://www.google.com/maps/dir/?api=1&destination='+lat+','+lng, '_blank');
+}
+
+function locateMe(){
+  if(!navigator.geolocation){
+    toast('مرورگر شما موقعیت مکانی را پشتیبانی نمی‌کند.');
+    return;
+  }
+  toast('در حال دریافت موقعیت شما…');
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const me=[pos.coords.latitude,pos.coords.longitude];
+    if(stylistMap){
+      L.marker(me).addTo(stylistMap).bindPopup('موقعیت تقریبی شما').openPopup();
+      stylistMap.fitBounds([me,stylistLatLng],{padding:[25,25]});
+    }
+    const R=6371, dLat=(me[0]-stylistLatLng[0])*Math.PI/180, dLng=(me[1]-stylistLatLng[1])*Math.PI/180;
+    const a=Math.sin(dLat/2)**2+Math.cos(stylistLatLng[0]*Math.PI/180)*Math.cos(me[0]*Math.PI/180)*Math.sin(dLng/2)**2;
+    const km=R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+    toast('فاصله تقریبی تا سالن: '+km.toFixed(1)+' کیلومتر');
+  }, ()=>toast('اجازه دسترسی به موقعیت مکانی داده نشد.'));
+}
+
+const _showOriginal = show;
+show = function(id,el){
+  _showOriginal(id,el);
+  if(id==='stylist') setTimeout(initStylistMap,120);
+};
+</script>
+
+<script>
+function show(id,el){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id)?.classList.add('active');document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));if(el?.classList.contains('nav'))el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+function gender(el){el.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));el.classList.add('on');toast('حالت مخاطب تغییر کرد ✓')}
+function openBook(name){document.getElementById('bookTitle').textContent='رزرو نوبت · '+name;document.getElementById('modal').classList.add('show')}
+function closeBook(){document.getElementById('modal').classList.remove('show')}
+function pick(el){document.querySelectorAll('.time').forEach(x=>x.classList.remove('selected'));el.classList.add('selected')}
+function confirmBook(){closeBook();toast('نوبت با موفقیت ثبت شد ✓')}
+let timer;function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>t.classList.remove('show'),2200)}
+</script></div>
+<script>
+function sellerSignup(){
+  alert("عضویت فروشنده\n\nدر نسخه کامل، فروشنده می‌تواند اطلاعات کسب‌وکار، مجوزها، شماره تماس، حساب تسویه و محصولات خود را ثبت کند.");
+}
+</script>
+
+<script>
+let cart = [];
+function showShopTab(name, btn){
+  document.querySelectorAll('.shop-panel').forEach(x=>x.classList.add('hidden'));
+  document.getElementById('shop-'+name).classList.remove('hidden');
+  document.querySelectorAll('.shop-tab').forEach(x=>x.classList.remove('active'));
+  btn.classList.add('active');
+}
+function addToCart(name, price){
+  cart.push({name,price});
+  document.getElementById('cartCount').textContent = cart.length;
+  renderCart();
+  alert('محصول به سبد خرید اضافه شد.');
+}
+function renderCart(){
+  const box=document.getElementById('cartItems');
+  if(!cart.length){box.textContent='سبد خرید شما خالی است.';document.getElementById('cartTotal').textContent='۰ تومان';return;}
+  box.innerHTML=cart.map((x,i)=>`<div>${i+1}. ${x.name} — ${x.price.toLocaleString('fa-IR')} تومان</div>`).join('');
+  const total=cart.reduce((s,x)=>s+x.price,0);
+  document.getElementById('cartTotal').textContent=total.toLocaleString('fa-IR')+' تومان';
+}
+function registerSeller(){
+  const name=document.getElementById('sellerName').value.trim();
+  const phone=document.getElementById('sellerPhone').value.trim();
+  if(!name || !phone){alert('لطفاً نام فروشگاه و شماره تماس را وارد کنید.');return;}
+  alert('درخواست عضویت فروشنده ثبت شد. در نسخه کامل، احراز هویت و تأیید فروشگاه انجام می‌شود.');
+}
+function checkout(){
+  if(!cart.length){alert('سبد خرید خالی است.');return;}
+  const total=cart.reduce((s,x)=>s+x.price,0);
+  const rate=10;
+  const fee=Math.round(total*rate/100);
+  const seller=total-fee;
+  alert('پیش‌نمایش پرداخت\\n\\nمبلغ سفارش: '+total.toLocaleString('fa-IR')+' تومان\\nسهم BEAUTYLINK: '+fee.toLocaleString('fa-IR')+' تومان\\nسهم فروشنده: '+seller.toLocaleString('fa-IR')+' تومان\\n\\nدر نسخه نهایی این مرحله به درگاه پرداخت واقعی متصل می‌شود و سفارش با وضعیت پرداخت ثبت خواهد شد.');
+}
+</script>
+<script>
+function updateCommission(v){
+  const rate=Math.max(0,Math.min(100,Number(v)||0));
+  const sale=1000000;
+  const fee=Math.round(sale*rate/100);
+  const seller=sale-fee;
+  document.getElementById('sellerRateLabel').textContent=rate+'٪ (قابل تنظیم)';
+  document.getElementById('previewFee').textContent=fee.toLocaleString('fa-IR');
+  document.getElementById('previewSeller').textContent=seller.toLocaleString('fa-IR');
+}
+</script>
+<script>
+function toggleFollow(btn){btn.textContent = btn.textContent.includes('دنبال') ? '✓ دنبال می‌کنم' : '+ دنبال کردن'; toast(btn.textContent);}
+function socialFilter(btn){btn.parentElement.querySelectorAll('.social-tab').forEach(x=>x.classList.remove('on'));btn.classList.add('on');toast('فید به‌روزرسانی شد ✓');}
+function toggleSwitch(btn){btn.classList.toggle('on');}
+function acceptWait(){toast('نوبت برای شما رزرو شد ✓');}
+let selectedRating=0;
+function rateStar(n){selectedRating=n;document.querySelectorAll('#stars .star').forEach((s,i)=>s.classList.toggle('on',i<n));}
+function submitPublicFeedback(){if(!selectedRating){toast('لطفاً امتیاز ۱ تا ۵ را انتخاب کن');return;}toast('نظر عمومی ثبت شد ✓');}
+function submitPrivateFeedback(){const text=document.getElementById('privateFeedback').value.trim();if(!text){toast('متن بازخورد را بنویس');return;}toast('بازخورد خصوصی با موفقیت ارسال شد 🔒');document.getElementById('privateFeedback').value='';}
+function sendChat(){const input=document.getElementById('chatInput');const text=input.value.trim();if(!text)return;const b=document.createElement('div');b.className='bubble me';b.textContent=text;document.getElementById('chatList').appendChild(b);input.value='';toast('پیام ارسال شد');}
+</script>
+
+<script>
+let ownerMap, ownerMarker;
+let selectedSalonLocation = JSON.parse(localStorage.getItem('arayeshto_salon_location') || 'null');
+
+function initOwnerMap(){
+  const el=document.getElementById('ownerMap');
+  if(!el || typeof L==='undefined') return;
+  const start = selectedSalonLocation
+    ? [selectedSalonLocation.lat, selectedSalonLocation.lng]
+    : [35.7868,44.4447]; // fallback is replaced below when map is first used
+  const fallback = [35.7868,51.4447];
+  const center = selectedSalonLocation ? start : fallback;
+  ownerMap=L.map('ownerMap',{scrollWheelZoom:false}).setView(center,15);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    maxZoom:19, attribution:'© OpenStreetMap contributors'
+  }).addTo(ownerMap);
+  if(selectedSalonLocation){
+    ownerMarker=L.marker(start,{draggable:true}).addTo(ownerMap)
+      .bindPopup('موقعیت ثبت‌شده سالن').openPopup();
+    ownerMarker.on('dragend',()=> {
+      const p=ownerMarker.getLatLng();
+      selectedSalonLocation={lat:p.lat,lng:p.lng};
+      updateSavedLocationText(false);
+    });
+  }
+  ownerMap.on('click', e=>{
+    selectedSalonLocation={lat:e.latlng.lat,lng:e.latlng.lng};
+    if(ownerMarker) ownerMap.removeLayer(ownerMarker);
+    ownerMarker=L.marker([e.latlng.lat,e.latlng.lng],{draggable:true})
+      .addTo(ownerMap).bindPopup('موقعیت انتخابی سالن').openPopup();
+    ownerMarker.on('dragend',()=>{
+      const p=ownerMarker.getLatLng();
+      selectedSalonLocation={lat:p.lat,lng:p.lng};
+      updateSavedLocationText(false);
+    });
+    updateSavedLocationText(false);
+  });
+  updateSavedLocationText(true);
+}
+
+function useCurrentSalonLocation(){
+  if(!navigator.geolocation){
+    toast('مرورگر شما موقعیت مکانی را پشتیبانی نمی‌کند.');
+    return;
+  }
+  toast('در حال دریافت موقعیت سالن…');
+  navigator.geolocation.getCurrentPosition(pos=>{
+    selectedSalonLocation={lat:pos.coords.latitude,lng:pos.coords.longitude};
+    if(ownerMarker) ownerMap.removeLayer(ownerMarker);
+    ownerMarker=L.marker([selectedSalonLocation.lat,selectedSalonLocation.lng],{draggable:true})
+      .addTo(ownerMap).bindPopup('موقعیت سالن').openPopup();
+    ownerMarker.on('dragend',()=>{
+      const p=ownerMarker.getLatLng();
+      selectedSalonLocation={lat:p.lat,lng:p.lng};
+      updateSavedLocationText(false);
+    });
+    ownerMap.setView([selectedSalonLocation.lat,selectedSalonLocation.lng],17);
+    updateSavedLocationText(false);
+  },()=>toast('اجازه دسترسی به موقعیت مکانی داده نشد.'));
+}
+
+function saveSalonLocation(){
+  if(!selectedSalonLocation){
+    toast('اول یک نقطه روی نقشه انتخاب کن.');
+    return;
+  }
+  localStorage.setItem('arayeshto_salon_location',JSON.stringify(selectedSalonLocation));
+  updateSavedLocationText(true);
+  toast('موقعیت سالن با موفقیت ذخیره شد ✓');
+}
+
+function updateSavedLocationText(saved){
+  const el=document.getElementById('savedLocationText');
+  if(!el) return;
+  if(!selectedSalonLocation){
+    el.textContent='هنوز موقعیت اختصاصی سالن ذخیره نشده است.';
+    return;
+  }
+  const prefix=saved?'موقعیت ذخیره‌شده: ':'موقعیت انتخاب‌شده: ';
+  el.textContent=prefix+selectedSalonLocation.lat.toFixed(6)+' ، '+selectedSalonLocation.lng.toFixed(6);
+}
+
+const _initStylistMapOriginal = window.initStylistMap;
+window.initStylistMap = function(){
+  if(_initStylistMapOriginal) _initStylistMapOriginal();
+  setTimeout(initOwnerMap,100);
+};
+</script>
+
+
+<section id="nearby" class="page">
+  <h1>آرایشگرهای نزدیک من</h1>
+  
+<div class="location-card nearby-filters">
+  <div class="location-head">
+    <h3>🔎 فیلتر آرایشگرها</h3>
+    <span class="badge">انتخاب کن</span>
+  </div>
+  <div class="filter-grid">
+    <select id="filterGender" onchange="applyNearbyFilters()">
+      <option value="all">همه</option>
+      <option value="women">بانوان</option>
+      <option value="men">آقایان</option>
+    </select>
+    <select id="filterService" onchange="applyNearbyFilters()">
+      <option value="all">همه خدمات</option>
+      <option value="hair">مو</option>
+      <option value="beard">ریش</option>
+      <option value="nail">ناخن</option>
+      <option value="makeup">میکاپ</option>
+      <option value="facial">پاکسازی و فیشیال</option>
+    </select>
+    <select id="filterRating" onchange="applyNearbyFilters()">
+      <option value="0">هر امتیازی</option>
+      <option value="4.5">۴.۵ به بالا</option>
+      <option value="4.7">۴.۷ به بالا</option>
+      <option value="4.9">۴.۹ به بالا</option>
+    </select>
+    <select id="filterPrice" onchange="applyNearbyFilters()">
+      <option value="all">هر قیمتی</option>
+      <option value="low">اقتصادی</option>
+      <option value="mid">متوسط</option>
+      <option value="high">پریمیوم</option>
+    </select>
+  </div>
+</div>
+
+<div class="location-card">
+    <div class="location-head">
+      <h3>🗺️ سالن‌های اطراف</h3>
+      <span class="badge" id="nearbyStatus">موقعیت شما</span>
+    </div>
+    <div class="address">با فعال کردن موقعیت مکانی، آرایشگرها و سالن‌های اطراف شما روی نقشه نمایش داده می‌شوند.</div>
+    <div class="map-wrap nearby-map"><div id="nearbyMap"></div></div>
+    <div class="map-actions">
+      <button class="btn" onclick="findNearbyStylists()">📍 پیدا کردن نزدیک‌ترین‌ها</button>
+      <button class="btn alt" onclick="openNearbyInMaps()">🧭 مسیریابی</button>
+    </div>
+  </div>
+  <div class="nearby-list" id="nearbyList"></div>
+</section>
+
+
+<script>
+const nearbyStylists = [
+  {name:'سارا محمدی', gender:'women', services:['hair','makeup','facial'], type:'رنگ و لایت', rating:4.9, price:'high', lat:35.7868, lng:51.4447, address:'سعادت‌آباد، تهران'},
+  {name:'علی کریمی', gender:'men', services:['hair','beard','facial'], type:'آرایشگر آقایان', rating:4.8, price:'mid', lat:35.7819, lng:51.4550, address:'شهرک غرب، تهران'},
+  {name:'مریم احمدی', gender:'women', services:['makeup','nail','facial'], type:'میکاپ و ناخن', rating:4.7, price:'mid', lat:35.7922, lng:51.4370, address:'پونک، تهران'},
+  {name:'امیر رضایی', gender:'men', services:['hair','beard'], type:'باربر و اصلاح تخصصی', rating:4.9, price:'low', lat:35.7750, lng:51.4480, address:'مرزداران، تهران'}
+];
+let nearbyMap, nearbyUserMarker, nearbyMarkers=[];
+
+function distanceKm(a,b,c,d){
+  const R=6371, p=Math.PI/180;
+  const dLat=(c-a)*p, dLng=(d-b)*p;
+  const x=Math.sin(dLat/2)**2 + Math.cos(a*p)*Math.cos(c*p)*Math.sin(dLng/2)**2;
+  return R*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));
+}
+
+function initNearbyMap(user){
+  const el=document.getElementById('nearbyMap');
+  if(!el || typeof L==='undefined') return;
+  if(nearbyMap) nearbyMap.remove();
+  nearbyMap=L.map('nearbyMap',{scrollWheelZoom:false}).setView(user,13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    maxZoom:19, attribution:'© OpenStreetMap contributors'
+  }).addTo(nearbyMap);
+
+  nearbyUserMarker=L.marker(user).addTo(nearbyMap).bindPopup('📍 موقعیت شما').openPopup();
+
+  nearbyMarkers.forEach(m=>nearbyMap.removeLayer(m));
+  nearbyMarkers=[];
+  nearbyStylists.forEach(s=>{
+    const m=L.marker([s.lat,s.lng]).addTo(nearbyMap)
+      .bindPopup('<b>'+s.name+'</b><br>'+s.type+'<br>⭐ '+s.rating);
+    nearbyMarkers.push(m);
+  });
+
+  const bounds=[user,...nearbyStylists.map(s=>[s.lat,s.lng])];
+  nearbyMap.fitBounds(bounds,{padding:[25,25]});
+  renderNearbyList(user);
+}
+
+function renderNearbyList(user, source=nearbyStylists){
+  const list=document.getElementById('nearbyList');
+  if(!list) return;
+  const gender=document.getElementById('filterGender')?.value || 'all';
+  const service=document.getElementById('filterService')?.value || 'all';
+  const rating=Number(document.getElementById('filterRating')?.value || 0);
+  const price=document.getElementById('filterPrice')?.value || 'all';
+
+  const filtered=source.filter(s=>
+    (gender==='all'||s.gender===gender) &&
+    (service==='all'||s.services.includes(service)) &&
+    s.rating>=rating &&
+    (price==='all'||s.price===price)
+  ).map(s=>({...s,distance:distanceKm(user[0],user[1],s.lat,s.lng)}))
+   .sort((a,b)=>a.distance-b.distance);
+
+  list.innerHTML=filtered.length ? filtered.map(s=>`
+    <div class="nearby-item">
+      <div>
+        <div class="name">${s.name}</div>
+        <div class="meta">${s.type} · ⭐ ${s.rating}<br>📍 ${s.address}</div>
+      </div>
+      <div class="distance">${s.distance.toFixed(1)} km</div>
+    </div>`).join('') :
+    '<div class="notice">برای این فیلترها آرایشگری پیدا نشد. فیلترها را تغییر بده.</div>';
+}
+
+function applyNearbyFilters(){
+  if(!nearbyMap || !nearbyUserMarker){
+    toast('ابتدا «پیدا کردن نزدیک‌ترین‌ها» را بزن.');
+    return;
+  }
+  const p=nearbyUserMarker.getLatLng();
+  const user=[p.lat,p.lng];
+  nearbyMarkers.forEach(m=>nearbyMap.removeLayer(m));
+  nearbyMarkers=[];
+  const gender=document.getElementById('filterGender')?.value || 'all';
+  const service=document.getElementById('filterService')?.value || 'all';
+  const rating=Number(document.getElementById('filterRating')?.value || 0);
+  const price=document.getElementById('filterPrice')?.value || 'all';
+  const filtered=nearbyStylists.filter(s=>
+    (gender==='all'||s.gender===gender) &&
+    (service==='all'||s.services.includes(service)) &&
+    s.rating>=rating &&
+    (price==='all'||s.price===price)
+  );
+  filtered.forEach(s=>{
+    const m=L.marker([s.lat,s.lng]).addTo(nearbyMap)
+      .bindPopup('<b>'+s.name+'</b><br>'+s.type+'<br>⭐ '+s.rating);
+    nearbyMarkers.push(m);
+  });
+  renderNearbyList(user,nearbyStylists);
+}
+
+function findNearbyStylists(){
+  if(!navigator.geolocation){
+    toast('مرورگر شما موقعیت مکانی را پشتیبانی نمی‌کند.');
+    return;
+  }
+  toast('در حال پیدا کردن آرایشگرهای نزدیک…');
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const user=[pos.coords.latitude,pos.coords.longitude];
+    document.getElementById('nearbyStatus').textContent='موقعیت فعال شد ✓';
+    initNearbyMap(user);
+    toast('آرایشگرهای نزدیک روی نقشه نمایش داده شدند.');
+  },()=>{
+    toast('برای پیدا کردن سالن‌های نزدیک، اجازه موقعیت مکانی را فعال کن.');
+  });
+}
+
+function openNearbyInMaps(){
+  if(!navigator.geolocation){
+    toast('موقعیت مکانی در دسترس نیست.');
+    return;
+  }
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const s=nearbyStylists[0];
+    window.open('https://www.google.com/maps/dir/?api=1&origin='+pos.coords.latitude+','+pos.coords.longitude+'&destination='+s.lat+','+s.lng,'_blank');
+  },()=>toast('ابتدا اجازه موقعیت مکانی را فعال کن.'));
+}
+
+/* Add a convenient entry point on the home page when possible. */
+document.addEventListener('DOMContentLoaded',()=>{
+  const home=document.querySelector('#home');
+  if(home && !document.getElementById('nearbyEntry')){
+    const d=document.createElement('div');
+    d.id='nearbyEntry';
+    d.className='location-card';
+    d.innerHTML='<div class="location-head"><h3>📍 آرایشگرهای نزدیک من</h3><span class="badge">نزدیک شما</span></div><div class="address">سالن‌ها و آرایشگرهای اطراف را روی نقشه پیدا کن.</div><button class="btn" style="width:100%" onclick="show(\'nearby\')">مشاهده روی نقشه</button>';
+    home.appendChild(d);
+  }
+});
+</script>
+
+
+<section id="stylistDashboard" class="page">
+  <h1>پنل آرایشگر</h1>
+  <div class="artistHero">
+    <div class="artistRow">
+      <div class="artistPic">👩🏻‍🎨</div>
+      <div>
+        <h2 style="margin:0">سارا محمدی</h2>
+        <div class="sub">مدیریت پروفایل و سالن</div>
+        <div class="rating">★ 4.9 · ۲۶۵ نظر</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-grid">
+    <div class="dash-card"><b>۵۰۰+</b><span>مشتری</span></div>
+    <div class="dash-card"><b>۱۲۴</b><span>نمونه‌کار</span></div>
+    <div class="dash-card"><b>۱۸</b><span>رزرو امروز</span></div>
+    <div class="dash-card"><b>۴.۹</b><span>امتیاز</span></div>
+  </div>
+
+  <div class="location-card">
+    <div class="location-head"><h3>👤 اطلاعات پروفایل</h3><span class="badge">قابل ویرایش</span></div>
+    <div class="form-grid">
+      <label>نام و نام خانوادگی<input id="dashName" value="سارا محمدی"></label>
+      <label>نوع فعالیت<select id="dashType"><option>آرایشگر بانوان</option><option>آرایشگر آقایان</option><option>ناخن‌کار</option><option>میکاپ آرتیست</option></select></label>
+      <label>شماره تماس<input id="dashPhone" value="۰۹۱۲۱۲۳۴۵۶۷"></label>
+      <label>آدرس سالن<input id="dashAddress" value="تهران، سعادت‌آباد، بلوار سرو غربی"></label>
+    </div>
+    <button class="btn" style="width:100%;margin-top:12px" onclick="saveStylistProfile()">💾 ذخیره پروفایل</button>
+  </div>
+
+  <div class="location-card">
+    <div class="location-head"><h3>💇 خدمات و قیمت‌ها</h3><span class="badge">مدیریت</span></div>
+    <div id="serviceManager"></div>
+    <div class="form-grid">
+      <input id="newServiceName" placeholder="نام خدمت">
+      <input id="newServicePrice" placeholder="قیمت (تومان)" inputmode="numeric">
+    </div>
+    <button class="btn alt" style="width:100%;margin-top:10px" onclick="addStylistService()">＋ افزودن خدمت</button>
+  </div>
+
+  <div class="location-card">
+    <div class="location-head"><h3>🕐 ساعات کاری و نوبت‌ها</h3><span class="badge">مدیریت</span></div>
+    <div class="form-grid">
+      <label>شروع<input id="workStart" type="time" value="09:00"></label>
+      <label>پایان<input id="workEnd" type="time" value="20:00"></label>
+    </div>
+    <div class="address">آرایشگر می‌تواند ساعت‌های کاری را تغییر دهد و زمان‌های خاص را برای رزرو دستی آزاد یا مسدود کند.</div>
+    <button class="btn" style="width:100%" onclick="saveWorkingHours()">💾 ذخیره ساعات کاری</button>
+  </div>
+
+  
+<div class="location-card">
+  <div class="location-head"><h3>📥 مدیریت نوبت‌های مشتریان</h3><span class="badge" id="bookingCountBadge">۰ نوبت</span></div>
+  <div class="filter-grid">
+    <select id="bookingStatusFilter" onchange="renderBookings()">
+      <option value="all">همه نوبت‌ها</option>
+      <option value="pending">در انتظار تأیید</option>
+      <option value="confirmed">تأیید شده</option>
+      <option value="rejected">رد شده</option>
+      <option value="completed">انجام شده</option>
+    </select>
+    <select id="bookingDateFilter" onchange="renderBookings()">
+      <option value="all">همه تاریخ‌ها</option>
+      <option value="today">امروز</option>
+    </select>
+  </div>
+  <div id="realBookingsList" style="margin-top:10px"></div>
+</div>
+
+<div class="location-card">
+    <div class="location-head"><h3>📅 رزروهای امروز</h3><span class="badge">۱۸ نوبت</span></div>
+    <div class="booking-row"><b>۱۰:۰۰</b><span>مریم · رنگ و لایت</span><button class="mini-btn">مشاهده</button></div>
+    <div class="booking-row"><b>۱۲:۳۰</b><span>نگار · میکاپ</span><button class="mini-btn">مشاهده</button></div>
+    <div class="booking-row"><b>۱۶:۰۰</b><span>سارا · براشینگ</span><button class="mini-btn">مشاهده</button></div>
+  </div>
+
+  <div class="location-card">
+    <div class="location-head"><h3>📍 موقعیت سالن</h3><span class="badge">از نسخه V8</span></div>
+    <div class="address">موقعیت ثبت‌شده سالن از بخش نقشه قابل مدیریت است.</div>
+    <button class="btn alt" style="width:100%" onclick="show('stylist')">مشاهده پروفایل عمومی</button>
+  </div>
+</section>
+
+
+<script>
+const stylistServices = JSON.parse(localStorage.getItem('arayeshto_services') || 'null') || [
+ {name:'رنگ و لایت',price:'۱,۸۰۰,۰۰۰ تومان'},
+ {name:'میکاپ',price:'۹۵۰,۰۰۰ تومان'},
+ {name:'براشینگ',price:'۴۵۰,۰۰۰ تومان'}
+];
+
+function renderServiceManager(){
+ const box=document.getElementById('serviceManager'); if(!box)return;
+ box.innerHTML=stylistServices.map((s,i)=>`
+ <div class="service-manager-row">
+   <div><b>${s.name}</b><small>${s.price}</small></div>
+   <button class="remove-service" onclick="removeStylistService(${i})">حذف</button>
+ </div>`).join('');
+}
+function addStylistService(){
+ const n=document.getElementById('newServiceName').value.trim();
+ const p=document.getElementById('newServicePrice').value.trim();
+ if(!n||!p){toast('نام خدمت و قیمت را وارد کن.');return;}
+ stylistServices.push({name:n,price:p+' تومان'});
+ localStorage.setItem('arayeshto_services',JSON.stringify(stylistServices));
+ document.getElementById('newServiceName').value='';
+ document.getElementById('newServicePrice').value='';
+ renderServiceManager(); toast('خدمت اضافه شد ✓');
+}
+function removeStylistService(i){
+ stylistServices.splice(i,1);
+ localStorage.setItem('arayeshto_services',JSON.stringify(stylistServices));
+ renderServiceManager(); toast('خدمت حذف شد.');
+}
+function saveStylistProfile(){
+ const data={
+  name:document.getElementById('dashName').value,
+  type:document.getElementById('dashType').value,
+  phone:document.getElementById('dashPhone').value,
+  address:document.getElementById('dashAddress').value
+ };
+ localStorage.setItem('arayeshto_stylist_profile',JSON.stringify(data));
+ toast('پروفایل با موفقیت ذخیره شد ✓');
+}
+function saveWorkingHours(){
+ const s=document.getElementById('workStart').value,e=document.getElementById('workEnd').value;
+ localStorage.setItem('arayeshto_working_hours',JSON.stringify({start:s,end:e}));
+ toast('ساعات کاری ذخیره شد ✓');
+}
+document.addEventListener('DOMContentLoaded',renderServiceManager);
+</script>
+
+
+<script>
+const bookingStorageKey='arayeshto_bookings';
+function getBookings(){
+  try { return JSON.parse(localStorage.getItem(bookingStorageKey)||'[]'); }
+  catch(e){ return []; }
+}
+function saveBookings(list){ localStorage.setItem(bookingStorageKey,JSON.stringify(list)); }
+
+function seedDemoBookings(){
+  if(getBookings().length) return;
+  const demo=[
+    {id:'BK-1001',customer:'مریم رضایی',phone:'۰۹۱۲***۴۵۶۷',service:'رنگ و لایت',date:'۱۴۰۵/۰۸/۰۱',time:'۱۰:۰۰',price:'۱,۸۰۰,۰۰۰ تومان',status:'pending'},
+    {id:'BK-1002',customer:'نگار احمدی',phone:'۰۹۳۵***۸۸۲۱',service:'میکاپ',date:'۱۴۰۵/۰۸/۰۱',time:'۱۲:۳۰',price:'۹۵۰,۰۰۰ تومان',status:'confirmed'},
+    {id:'BK-1003',customer:'سارا کریمی',phone:'۰۹۱۷***۱۱۲۲',service:'براشینگ',date:'۱۴۰۵/۰۸/۰۱',time:'۱۶:۰۰',price:'۴۵۰,۰۰۰ تومان',status:'completed'}
+  ];
+  saveBookings(demo);
+}
+
+function statusText(s){
+  return {pending:'در انتظار تأیید',confirmed:'تأیید شده',rejected:'رد شده',completed:'انجام شده'}[s]||s;
+}
+function renderBookings(){
+  const box=document.getElementById('realBookingsList');
+  if(!box)return;
+  const sf=document.getElementById('bookingStatusFilter')?.value||'all';
+  const df=document.getElementById('bookingDateFilter')?.value||'all';
+  const all=getBookings();
+  let rows=all.filter(b=>(sf==='all'||b.status===sf));
+  if(df==='today') rows=rows.filter(b=>b.date==='۱۴۰۵/۰۸/۰۱');
+  document.getElementById('bookingCountBadge').textContent=all.length+' نوبت';
+  if(!rows.length){box.innerHTML='<div class="empty-bookings">نوبتی برای این فیلتر وجود ندارد.</div>';return;}
+  box.innerHTML=rows.map(b=>{
+    const actions=b.status==='pending'
+      ? `<button onclick="updateBooking('${b.id}','confirmed')">✓ تأیید</button><button onclick="updateBooking('${b.id}','rejected')">✕ رد</button>`
+      : b.status==='confirmed'
+        ? `<button onclick="updateBooking('${b.id}','completed')">✓ انجام شد</button><button onclick="updateBooking('${b.id}','rejected')">لغو نوبت</button>`
+        : '';
+    return `<div class="booking-card">
+      <div class="booking-top"><div class="booking-customer">${b.customer}</div><span class="status-${b.status}">${statusText(b.status)}</span></div>
+      <div class="booking-meta">💇 ${b.service} · 💰 ${b.price}<br>📅 ${b.date} · 🕐 ${b.time}<br>📞 ${b.phone}</div>
+      <div class="booking-actions">${actions}</div>
+    </div>`;
+  }).join('');
+}
+
+function updateBooking(id,status){
+  const all=getBookings();
+  const b=all.find(x=>x.id===id);
+  if(!b)return;
+  b.status=status;
+  saveBookings(all);
+  renderBookings();
+  toast('وضعیت نوبت به «'+statusText(status)+'» تغییر کرد ✓');
+}
+
+/* Customer-side booking demo: creates a real local reservation record immediately. */
+function createCustomerBooking(customer,service,date,time,price){
+  const all=getBookings();
+  const exists=all.some(b=>b.date===date && b.time===time && b.status!=='rejected');
+  if(exists){ toast('این ساعت قبلاً رزرو شده است.'); return false; }
+  all.push({
+    id:'BK-'+Date.now(),
+    customer:customer||'مشتری جدید',
+    phone:'ثبت‌شده در حساب کاربر',
+    service:service||'خدمت انتخابی',
+    date:date||'تاریخ انتخابی',
+    time:time||'ساعت انتخابی',
+    price:price||'قیمت خدمت',
+    status:'pending'
+  });
+  saveBookings(all);
+  toast('درخواست نوبت ثبت شد و برای آرایشگر ارسال شد ✓');
+  return true;
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  seedDemoBookings();
+  renderBookings();
+});
+</script>
+
+</body></html>
